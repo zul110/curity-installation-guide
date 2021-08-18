@@ -28,6 +28,11 @@ then
 fi
 
 #
+# This step is necessary in minikube when using self signed certificates
+#
+kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+
+#
 # Free memory by stopping the profile or delete the profile permanently if you prefer
 # - minikube stop --profile curity
 # - minikube delete --profile curity

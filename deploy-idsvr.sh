@@ -5,6 +5,14 @@
 #######################################################################################
 
 #
+# First check prerequisites
+#
+if [ ! -f './idsvr/license.json' ]; then
+  echo "Please provide a license.json file in the deployment/idsvr folder in order to deploy the system"
+  exit 1
+fi
+
+#
 # Point to the minikube profile
 #
 eval $(minikube docker-env --profile curity)
@@ -16,9 +24,16 @@ then
 fi
 
 #
+# Initial setup
+#
+rm -rf ./tmp
+mkdir ./tmp
+cp ./hooks/pre-commit ./.git/hooks
+
+#
 # Build a custom docker image with some extra resources
 #
-docker build -f idsvr/Dockerfile -t custom_idsvr:6.2.0 .
+docker build -f idsvr/Dockerfile -t custom_idsvr:6.3.1 .
 if [ $? -ne 0 ];
 then
   echo "Problem encountered building the Identity Server custom docker image"
@@ -40,6 +55,12 @@ then
   echo "Problem encountered creating the Kubernetes TLS secret for the Curity Identity Server"
   exit 1
 fi
+
+#
+# Also update the backed up SSL certificate keystore
+#
+RUNTIME_SSL_KEY=$(cat certs/curity.local.ssl.key)
+RUNTIME_SSL_CERT=$(cat certs/curity.local.ssl.pem)
 
 #
 # Create the config map referenced in the helm-values.yaml file
@@ -95,6 +116,14 @@ then
   echo "Problem encountered applying Kubernetes YAML"
   exit 1
 fi
+
+#
+# Wait for the Admin UI to become available
+#
+
+#
+# Then 
+#
 
 #
 # Once the pods come up we can call them over these HTTPS URLs externally:

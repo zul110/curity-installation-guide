@@ -3,11 +3,11 @@
 #
 # After building, files in the image can be viewed via the below commands:
 # - eval $(minikube docker-env --profile curity)
-# - docker run -it custom_idsvr:6.2.0 bash
+# - docker run -it custom_idsvr:6.3.1 bash
 #
 
 # Get the base image
-FROM curity.azurecr.io/curity/idsvr:6.2.0
+FROM curity.azurecr.io/curity/idsvr:6.3.1
 
 # Copy the license to load at startup
 COPY idsvr/license.json /opt/idsvr/etc/init/license/
