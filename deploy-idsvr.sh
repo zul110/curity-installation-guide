@@ -118,14 +118,6 @@ then
 fi
 
 #
-# Wait for the Admin UI to become available
-#
-
-#
-# Then 
-#
-
-#
 # Once the pods come up we can call them over these HTTPS URLs externally:
 #
 # - curl -u 'admin:Password1' 'https://admin.curity.local/admin/api/restconf/data?depth=unbounded&content=config'
