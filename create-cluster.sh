@@ -10,7 +10,7 @@
 #
 # Create or start the cluster
 #
-minikube start --cpus=2 --memory=8192 --disk-size=50g --driver=hyperkit --profile curity
+minikube start --cpus=4 --memory=16384 --disk-size=50g --driver=hyperkit --profile curity
 if [ $? -ne 0 ];
 then
   echo "Minikube start problem encountered"

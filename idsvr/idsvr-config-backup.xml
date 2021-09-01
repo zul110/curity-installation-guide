@@ -324,7 +324,7 @@
                 <id>haapi-web-client</id>
                 <client-name>haapi-web-client</client-name>
                 <no-authentication>true</no-authentication>
-                <redirect-uris>https://localhost:7777/callback</redirect-uris>
+                <redirect-uris>https://localhost:7777/client-callback</redirect-uris>
                 <proof-key>
                   <require-proof-key>false</require-proof-key>
                 </proof-key>
