@@ -98,7 +98,7 @@ function Curity(viewsElement, codeElement, callback, apiFetch) {
         components.push(...generateMessages(json));
 
         if (json.type === 'authentication-step' || json.type === 'registration-step' || json.type === 'redirection-step'
-            || json.type === 'user-consent-step' || json.type == 'consentor-step') {
+            || json.type === 'user-consent-step' || json.type === 'consentor-step') {
             components.push(...generateActions(json, autoFollowLinks));
         } else if (json.type === 'oauth-authorization-response') {
             components.push(callback(json));

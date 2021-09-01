@@ -7,7 +7,7 @@ replicaCount: 2
 # Point to the custom image produced by our docker file
 image:
   repository: custom_idsvr
-  tag: 6.3.1
+  tag: 6.4.1
   pullPolicy: Never
   pullSecret:
 
