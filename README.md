@@ -1,4 +1,7 @@
-## Overview
+# Kubernetes Quick Start
+
+[![Quality](https://img.shields.io/badge/quality-experiment-red)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://img.shields.io/badge/availability-source-blue)](https://curity.io/resources/code-examples/status/)
 
 An end to end Kubernetes deployment of the Curity Identity Server, for demo purposes.
 
