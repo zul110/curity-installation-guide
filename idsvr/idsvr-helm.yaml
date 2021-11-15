@@ -203,7 +203,7 @@ spec:
     spec:
       containers:
         - name: idsvr-admin
-          image: "custom_idsvr:6.4.1"
+          image: "custom_idsvr:6.5.0"
           imagePullPolicy: Never
           command: ["/opt/idsvr/bin/idsvr"]
           args: ["-s", "admin",
@@ -302,7 +302,7 @@ spec:
     spec:
       containers:
         - name: idsvr-runtime
-          image: "custom_idsvr:6.4.1"
+          image: "custom_idsvr:6.5.0"
           imagePullPolicy: Never
           command: ["/opt/idsvr/bin/idsvr"]
           args: ["-s", "default","--no-admin"]
@@ -376,7 +376,7 @@ spec:
     spec:
       containers:
         - name: curity-idsvr-cluster-conf-job
-          image: "custom_idsvr:6.4.1"
+          image: "custom_idsvr:6.5.0"
           command: ["sh",  "/opt/idsvr/bin/createConfigSecret.sh"]
           env:
             - name: CONFIG_SERVICE_HOST
